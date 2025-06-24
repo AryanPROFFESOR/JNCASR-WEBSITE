@@ -5,8 +5,10 @@ import Particles from 'react-tsparticles'
 import { loadFull } from 'tsparticles'
 
 export default function ParticleCanvas() {
-  const particlesInit = useCallback(async engine => {
-    await loadFull(engine)
+  import type { Engine } from "@tsparticles/engine"; // <-- add at top if not already there
+
+const particlesInit = useCallback(async (engine: Engine) => {
+
   }, [])
 
   return (
