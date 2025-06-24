@@ -12,7 +12,7 @@ export default function ParticleCanvas() {
     await loadFull(engine);
   }, []);
 
-  const particlesLoaded = useCallback(async (container: Container | undefined) => {
+  const particlesLoaded = useCallback(async (_container: Container | undefined) => {
     // Optional: do something when particles are loaded
     // console.log(container);
   }, []);
