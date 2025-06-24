@@ -29,3 +29,24 @@ video {
 .bg-overlay {
   @apply absolute inset-0 bg-black opacity-30 z-0;
 }
+/* globals.css */
+
+html, body {
+  cursor: none;
+}
+
+/* Custom cursor element */
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease;
+}
