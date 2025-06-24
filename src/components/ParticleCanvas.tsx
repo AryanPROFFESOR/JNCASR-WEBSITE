@@ -2,14 +2,14 @@
 
 import { useCallback } from 'react'
 import Particles from 'react-tsparticles'
-import { loadFull } from 'tsparticles'
+// import { loadFull } from 'tsparticles'; // ❌ remove or comment out
+
+const particlesInit = useCallback(() => {}, []);
+
 
 export default function ParticleCanvas() {
   import type { Engine } from "@tsparticles/engine"; // <-- add at top if not already there
 
-const particlesInit = useCallback(async (engine: Engine) => {
-
-  }, [])
 
   return (
     <Particles
