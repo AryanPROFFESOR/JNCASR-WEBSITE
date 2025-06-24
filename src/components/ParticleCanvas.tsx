@@ -1,84 +1,82 @@
-'use client'
+"use client";
 
-import { useCallback } from 'react'
-import Particles from 'react-tsparticles'
-// import { loadFull } from 'tsparticles'; // ❌ remove or comment out
-
-const particlesInit = useCallback(() => {}, []);
-
+import { useCallback } from "react";
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
 
 export default function ParticleCanvas() {
-  import type { Engine } from "@tsparticles/engine"; // <-- add at top if not already there
-
+  const particlesInit = useCallback(async (engine: any) => {
+    await loadFull(engine);
+  }, []);
 
   return (
     <Particles
+      id="tsparticles"
       init={particlesInit}
       options={{
         background: {
           color: {
-            value: '#000000',
-          },
+            value: "transparent"
+          }
         },
-        fpsLimit: 60,
+        fullScreen: {
+          enable: true,
+          zIndex: -1
+        },
+        particles: {
+          number: {
+            value: 75,
+            density: {
+              enable: true,
+              value_area: 800
+            }
+          },
+          color: {
+            value: "#ffffff"
+          },
+          shape: {
+            type: "circle"
+          },
+          opacity: {
+            value: 0.5,
+            random: true
+          },
+          size: {
+            value: 3,
+            random: true
+          },
+          move: {
+            enable: true,
+            speed: 2,
+            direction: "none",
+            outModes: {
+              default: "bounce"
+            }
+          },
+          links: {
+            enable: true,
+            distance: 150,
+            color: "#ffffff",
+            opacity: 0.4,
+            width: 1
+          }
+        },
+        detectRetina: true,
         interactivity: {
           events: {
             onHover: {
               enable: true,
-              mode: 'repulse',
-            },
-            resize: true,
+              mode: "repulse"
+            }
           },
           modes: {
             repulse: {
               distance: 100,
-              duration: 0.4,
-            },
-          },
-        },
-        particles: {
-          color: {
-            value: '#ffffff',
-          },
-          links: {
-            color: '#ffffff',
-            distance: 100,
-            enable: true,
-            opacity: 0.5,
-            width: 1,
-          },
-          collisions: {
-            enable: true,
-          },
-          move: {
-            directions: 'none',
-            enable: true,
-            outModes: {
-              default: 'bounce',
-            },
-            random: false,
-            speed: 1,
-            straight: false,
-          },
-          number: {
-            density: {
-              enable: true,
-              area: 800,
-            },
-            value: 60,
-          },
-          opacity: {
-            value: 0.5,
-          },
-          shape: {
-            type: 'circle',
-          },
-          size: {
-            value: { min: 1, max: 3 },
-          },
-        },
-        detectRetina: true,
+              duration: 0.4
+            }
+          }
+        }
       }}
     />
-  )
+  );
 }
