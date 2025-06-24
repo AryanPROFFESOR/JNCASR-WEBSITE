@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global font and smooth scrolling */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  scroll-behavior: smooth;
+  transition: background-color 0.3s, color 0.3s;
+  line-height: 1.7;
+}
+
+/* Make text crisper */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth transitions for elements */
+a, button, input, textarea {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Custom text selection */
+::selection {
+  background-color: #0070f3;
+  color: white;
+}
+
+/* Heading styles */
+h1, h2, h3, h4 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #111;
+}
+
+/* Responsive container wrapper (optional if you're not using Tailwind's container class) */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
